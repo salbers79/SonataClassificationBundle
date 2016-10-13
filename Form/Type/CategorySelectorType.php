@@ -39,6 +39,12 @@ class CategorySelectorType extends AbstractType
         $this->manager = $manager;
     }
 
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        $view->vars['context'] = $options['context'];
+        $view->vars['category'] = $options['category'];
+    }
+
     /**
      * {@inheritdoc}
      */
